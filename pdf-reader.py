@@ -35,7 +35,7 @@ def pdf_to_speech(pdf_file, audio_file):
 # Create a main function
 def main():
     # Set the page title
-    st.title('PDF to Speech')
+    st.title('PDF to Audio')
     # Add a file uploader widget
     pdf_file = st.file_uploader('Upload a PDF file')
     # Check if a file was uploaded
