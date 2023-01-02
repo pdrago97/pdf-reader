@@ -31,13 +31,16 @@ def pdf_to_speech(pdf_file, audio_file):
             # Close the audio file
             audio_file.close()
 
-
 # Create a main function
 def main():
     # Set the page title
     st.title('PDF to Audio')
     # Add a file uploader widget
     pdf_file = st.file_uploader('Upload a PDF file')
+
+    with open('sample.pdf', 'rb') as f:
+        data = f.read()
+        st.download_button(label='Download sample PDF', data=data, file_name="sample.pdf", mime='application/pdf')
     # Check if a file was uploaded
     if pdf_file is not None:
         # Open an audio file in write mode
@@ -47,7 +50,6 @@ def main():
         # Embed an audio player
         st.audio('output.mp3')
 
-        
 # Run the main function
 if __name__ == '__main__':
     main()
